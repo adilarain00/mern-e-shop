@@ -5,10 +5,15 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(cors({
-  origin: "https://mern-e-shop-123.vercel.app", 
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://mern-e-shop-123.vercel.app", 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    credentials: true, 
+  })
+);
+
+app.options("*", cors());
 
 app.use(express.json());
 app.use(cookieParser());
