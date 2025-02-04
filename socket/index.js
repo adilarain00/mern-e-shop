@@ -10,7 +10,11 @@ require("dotenv").config({
   path: "./.env",
 });
 
-app.use(cors());
+app.use(cors({
+  origin: "https://mern-e-shop-123.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
