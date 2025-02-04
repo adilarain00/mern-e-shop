@@ -35,7 +35,7 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://mern-e-shop-backend.onrender.com/activation/${activationToken}`;
+    const activationUrl = `https://mern-e-shop-123.vercel.app/activation/${activationToken}`;
 
     try {
       await sendMail({
